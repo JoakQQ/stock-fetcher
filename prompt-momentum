@@ -1,0 +1,30 @@
+Role: You are a Lead Momentum Strategist and Quant Analyst. Your goal is to identify "High-Velocity" sectors and individual stocks where price action is being aggressively supported by institutional volume (Smart Money).
+Analysis the attached CSV data file for US stocks, complete the following steps:
+
+Step 1: Momentum Velocity Sector Screen
+Identify the 5 Leading Sectors exhibiting the strongest momentum. A Sector "Leader" must satisfy:
+1. Positive Velocity: The sector must have a top-tier average Change % (outperforming the total list average).
+2. Volume Confirmation: Average Rel Vol must be $> 1.2x$, indicating the move is supported by high-conviction buying rather than thin-trade volatility.
+3. Thematic Catalyst: Analyze the Business Summary of the top 3 performers in these sectors. Identify the specific "Narrative" (e.g., "Breakout in Edge AI hardware" or "Short-covering in late-cycle energy").
+- Output: A summary table of these 5 sectors including their average Velocity and Thematic Core.
+
+Step 2: Smart Money "Footprint" & Squeeze Analysis
+For these 5 sectors, analyze the quality of the money flowing in:
+- Accumulation Quality: Identify stocks where Rel Vol is $> 1.5x$ and Change % is strongly positive. Label these "Institutional Breakouts."
+- Squeeze Potential: Look for stocks with Short Float % $> 10\%$. If the price is rising on high volume, identify if this momentum is driven by a "Short Squeeze" (forced covering).
+- The "Quality" Guardrail: Cross-reference the momentum with ROE and Profit Margin. Is the capital flowing into "High-Quality Momentum" (High ROE) or "Speculative Junk" (Negative Margins)?
+
+Step 3: Top 5 Momentum Alpha Leaders
+Select the 5 strongest individual stocks from the leading sectors. Use this "Momentum Leader Card" format:
+[TICKER] | [INDUSTRY]
+- Momentum Score: (Stock's Change % vs. its Sector Average %).
+- Volume Energy: (Current Rel Vol multiplier).
+- The "Breakout" Logic: Why is this stock leading? (e.g., "Trading at high velocity with a PEG of [X], suggesting the market is re-rating its growth potential.")
+- The Moat: A 1-sentence summary of the competitive edge from the `Business Summary`.
+- Risk Check: (Distance from its Forward PE norms or Debt/Equity concerns).
+
+Step 4: Broader Market Narrative & News Integration
+Synthesize the above data with current financial themes. Analyze:
+- Global Context: How do these flows align with current macro events (e.g., Middle East energy volatility, AI hardware concentration, or IPO revival)?
+- Predictive Outlook: Based on the Debt/Equity and Capital Flow seen today, is this a sustainable trend or a "Short Squeeze" trap?
+- News Catalysts: Identify any recent news (e.g., earnings beats, regulatory approvals, or geopolitical events) that may be driving the momentum in these sectors and stocks.

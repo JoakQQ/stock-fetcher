@@ -51,7 +51,7 @@ def get_tickers_by_market_cap(min_cap: int = 1_000_000_000,
 
 def main():
     signal.signal(signal.SIGINT, _handle_sigint)
-    tickers = get_tickers_by_market_cap(min_cap=2_000_000_000, max_results=1_000)
+    tickers = get_tickers_by_market_cap(min_cap=2_000_000_000, max_results=500)
 
     print(f"Screening {len(tickers)} tickers with market cap >= $2B...\n")
 
