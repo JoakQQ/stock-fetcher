@@ -81,7 +81,8 @@ def main():
                     "Debt/Equity": info.get("debtToEquity"),
                     "ROE": f"{(info.get('returnOnEquity', 0) * 100):.2f}%" if info.get('returnOnEquity') else "N/A",
                     "Profit Margin": f"{(info.get('profitMargins', 0) * 100):.2f}%" if info.get('profitMargins') else "N/A",
-                    "Short Float %": f"{(info.get('shortPercentOfFloat', 0) * 100):.2f}%" if info.get('shortPercentOfFloat') else "N/A"
+                    "Short Float %": f"{(info.get('shortPercentOfFloat', 0) * 100):.2f}%" if info.get('shortPercentOfFloat') else "N/A",
+                    "Business Summary": info.get("longBusinessSummary", "N/A")
                 }
                 data_list.append(row)
             except KeyboardInterrupt:

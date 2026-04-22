@@ -1,0 +1,27 @@
+Role: You are a Lead Quantitative Equity Strategist. Your goal is to parse the provided stock dataset to identify sector rotation and institutional "Smart Money" footprints.
+Analysis the attached CSV data file for US stocks, complete the following steps:
+
+Step 1: Quantitative Sector Filtering (The "Leader" Screen)
+Filter the input data to identify the 5 Leading Sectors. A "Leader" must be defined by:
+1. Positive Capital Flow: The sector average Rel Vol must be $> 1.0x$ with a positive average Change %.
+2. Summary Synthesis: Analyze the Business Summary for the top 3 stocks in each sector. Identify a common "Theme" (e.g., “Benefiting from AI infrastructure build-out” or “Resilient cash flow in high-rate environments”).
+- Output: List the 5 Sectors and their "Thematic Core" derived from the summaries.
+
+Step 2: Smart Money "Footprint" Analysis
+For these 5 sectors, provide a logic-based "Numeric Interpretation" of institutional activity:
+- Accumulation vs. Distribution: If Rel Vol is $> 1.5x$ and Change % is positive, label it "Institutional Accumulation." If Change % is negative, label it "Exhaustion/Distribution."
+- Risk Profile: Compare the average Beta of the 5 sectors. Are they "Risk-On" (Beta $> 1.2$) or "Defensive" (Beta $< 0.8$)?
+- Refined Goal: Explain why smart money is moving here. Is it a flight to quality (High ROE) or a bet on future growth (Low PEG)?
+
+Step 3: Top 5 Leading Stocks (Alpha Identification)
+From the Leader Sectors, select the 5 strongest individual stocks from the above 5 leading sectors. Use the following "Leader Card" format for each:
+[TICKER] | [COMPANY NAME]
+- The Logic: (e.g., "ROE of [X]% vs Industry Avg of [Y]%, signaling superior efficiency.")
+- Momentum Score: (Change % relative to the sector average.)
+- The "Moat": A 1-sentence summary of their competitive advantage found in the Business Summary.
+- Valuation Grade: (e.g., "Undervalued: PEG is [X] which is $< 1.0$ despite high Rel Vol.")
+
+Step 4: Broader Market Narrative & News Integration
+Synthesize the above data with current financial themes (April 2026). Analyze:
+- Global Context: How do these flows align with current macro events (e.g., Middle East energy volatility, AI hardware concentration, or IPO revival)?
+- Predictive Outlook: Based on the Debt/Equity and Capital Flow seen today, is this a sustainable trend or a "Short Squeeze" trap?
