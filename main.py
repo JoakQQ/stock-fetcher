@@ -1,7 +1,8 @@
 import yfinance as yf
 import pandas as pd
 import signal
-import sys
+from datetime import date
+from pathlib import Path
 from tqdm import tqdm
 
 def _handle_sigint(sig, frame):
@@ -24,6 +25,10 @@ def get_tickers_by_market_cap(min_cap: int = 1_000_000_000,
     query = yf.EquityQuery('and', [
         yf.EquityQuery('gte', ['intradaymarketcap', min_cap]),
         yf.EquityQuery('eq', ['region', 'us']),
+        yf.EquityQuery('gte', ['percentchange', 0.5]),
+        yf.EquityQuery('gte', ['eodprice', 5]),
+        yf.EquityQuery('gte', ['avgdailyvol3m', 500_000]),
+        yf.EquityQuery('gte', ['dayvolume', 1_000_000]),
     ])
     tickers = []
     offset = 0
@@ -44,15 +49,13 @@ def get_tickers_by_market_cap(min_cap: int = 1_000_000_000,
             break
     return tickers
 
-
-data_list = []
-
-
 def main():
     signal.signal(signal.SIGINT, _handle_sigint)
-    tickers = get_tickers_by_market_cap(min_cap=2_000_000_000, max_results=5_000)
+    tickers = get_tickers_by_market_cap(min_cap=2_000_000_000, max_results=1_000)
 
     print(f"Screening {len(tickers)} tickers with market cap >= $2B...\n")
+
+    data_list = []
     try:
         for symbol in tqdm(tickers, desc="Fetching", unit="ticker"):
             try:
@@ -90,13 +93,14 @@ def main():
 
     # Create DataFrame and save
     df = pd.DataFrame(data_list)
-    output_txt = "output.txt"
-    output_pkl = "output.pkl"
+    out_dir = Path(f"output-{date.today().isoformat()}")
+    out_dir.mkdir(exist_ok=True)
+    output_txt = out_dir / "output.txt"
+    output_csv = out_dir / "output.csv"
     with open(output_txt, "w", encoding="utf-8") as f:
         f.write(df.to_string(index=False))
-    df.to_pickle(output_pkl)
-    print(f"\nSaved {len(df)} rows to {output_txt} and {output_pkl}")
-
+    df.to_csv(output_csv, index=False)
+    print(f"\nSaved {len(df)} rows to {output_txt} and {output_csv}")
 
 if __name__ == '__main__':
     main()
