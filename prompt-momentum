@@ -2,7 +2,7 @@ Role: You are a Lead Momentum Strategist and Quant Analyst. Your goal is to iden
 Provide a quantitative analysis strictly against CSV data file for US stocks, complete the following steps:
 
 Step 1: Identify the Stock Sectors from the CSV File
-Identify the sector for each stocks from the CSV File from the `Business Summary`
+Identify the sector for each stocks from the CSV File with in-depth analysis with your experience.
 
 Step 2: Momentum Velocity Sector Screen
 Identify the 5 Leading Sectors exhibiting the strongest momentum. A Sector "Leader" must satisfy:
@@ -23,7 +23,7 @@ From the Leader Sectors, select the 3 strong individual stocks in each of the ab
 - Momentum Score: (Stock's Change % vs. its Sector Average %).
 - Volume Energy: (Current Rel Vol multiplier).
 - The "Breakout" Logic: Why is this stock leading? (e.g., "Trading at high velocity with a PEG of [X], suggesting the market is re-rating its growth potential.")
-- The Moat: A 1-sentence summary of the competitive edge from the `Business Summary`.
+- The Moat: A 1-sentence summary of the competitive edge from the sector / industry you interpret.
 - Risk Check: (Distance from its Forward PE norms or Debt/Equity concerns).
 - Valuation Grade: (e.g., "Undervalued: PEG is [X] which is $< 1.0$ despite high Rel Vol.")
 
