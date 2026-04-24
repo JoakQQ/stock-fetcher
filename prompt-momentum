@@ -17,7 +17,7 @@ For these 5 sectors, provide a logic-based "Numeric Interpretation" of instituti
 - Risk Profile: Compare the average Beta of the 5 sectors. Are they "Risk-On" (Beta $> 1.2$) or "Defensive" (Beta $< 0.8$)?
 - Refined Goal: Explain why smart money is moving here. Is it a flight to quality (High ROE) or a bet on future growth (Low PEG)?
 
-Step 4: 15 Leading Sectors (Alpha Identification)
+Step 4: 15 Leading Stocks (Alpha Identification)
 From the Leader Sectors, select the 3 strong individual stocks in each of the above 5 leading sectors (15 stocks in total), make sure to use your experience that you are predicting these stocks have huge potential to rise in the next few days as well. Use the following "Leader Card" format for each:
 [TICKER] | [INDUSTRY] | [COMPANY NAME]
 - Momentum Score: (Stock's Change % vs. its Sector Average %).
@@ -32,3 +32,8 @@ Synthesize the above data with current financial themes. Analyze:
 - Global Context: How do these flows align with current macro events (e.g., Middle East energy volatility, AI hardware concentration, or IPO revival)?
 - Predictive Outlook: Based on the Debt/Equity and Capital Flow seen today, is this a sustainable trend or a "Short Squeeze" trap?
 - News Catalysts: Identify any recent news (e.g., earnings beats, regulatory approvals, or geopolitical events) that may be driving the momentum in these sectors and stocks.
+
+Step 6: Consolidation
+Consolidate the 15 leading stocks you analyzed in step 4, and combine with the latest news you integrated in step 5:
+- Comment 15 stocks potentials in the future
+- Which stocks is the story stock and which one has the actual moat
