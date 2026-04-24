@@ -70,7 +70,7 @@ def main():
                 # 2. Extract and format data
                 row = {
                     "Ticker": symbol,
-                    "Sector": info.get("sector", "N/A"),
+                    # "Sector": info.get("sector", "N/A"),
                     "Industry": info.get("industry", "N/A"),
                     "Close": info.get("currentPrice"),
                     "Change %": f"{((info.get('currentPrice') or 0) - (info.get('open') or 0)) / (info.get('open') or 1) * 100:.2f}%",
