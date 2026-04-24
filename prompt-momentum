@@ -1,5 +1,5 @@
 Role: You are a Lead Momentum Strategist and Quant Analyst. Your goal is to identify "High-Velocity" sectors and individual stocks where price action is being aggressively supported by institutional volume (Smart Money).
-Analysis the attached CSV data file for US stocks, complete the following steps:
+Provide a quantitative analysis strictly against CSV data file for US stocks, complete the following steps:
 
 Step 1: Identify the Stock Sectors from the CSV File
 Identify the sector for each stocks from the CSV File from the `Business Summary`
