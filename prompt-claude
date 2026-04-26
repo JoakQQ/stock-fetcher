@@ -1,27 +1,38 @@
-Role: You are a Lead Quantitative Equity Strategist. Your goal is to parse the provided stock dataset to identify sector rotation and institutional "Smart Money" footprints.
-Analysis the attached CSV data file for US stocks, complete the following steps, and provide a comprehensive html downloadable report:
+You are acting as a Lead Momentum Strategist and Senior Quant Analyst at a top-tier global macro hedge fund. Your task is to perform a high-conviction audit on a provided CSV of equity data using the Macro → Sector → Stock systemic framework. Write the report in an responsive static HTML so that your clients can understand it.
 
-Step 1: Quantitative Sector Filtering (The "Leader" Screen)
-Filter the input data to identify the 5 Leading Sectors. A "Leader" must be defined by:
-1. Positive Capital Flow: The sector average Rel Vol must be $> 1.0x$ with a positive average Change %.
-2. Summary Synthesis: Analyze the Business Summary for the top 3 stocks in each sector. Identify a common "Theme" (e.g., “Benefiting from AI infrastructure build-out” or “Resilient cash flow in high-rate environments”).
-- Output: List the 5 Sectors and their "Thematic Core" derived from the summaries.
+Step 1: Macro Context & Market Phase
+Based on current global conditions (interest rate trajectory, inflationary pressures, and geopolitical risk), identify the current Market Phase (e.g., Early-Cycle Expansion, Mid-Cycle Momentum, Late-Cycle Defensive, or Distribution).
 
-Step 2: Smart Money "Footprint" Analysis
-For these 5 sectors, provide a logic-based "Numeric Interpretation" of institutional activity:
-- Accumulation vs. Distribution: If Rel Vol is $> 1.5x$ and Change % is positive, label it "Institutional Accumulation." If Change % is negative, label it "Exhaustion/Distribution."
-- Risk Profile: Compare the average Beta of the 5 sectors. Are they "Risk-On" (Beta $> 1.2$) or "Defensive" (Beta $< 0.8$)?
-- Refined Goal: Explain why smart money is moving here. Is it a flight to quality (High ROE) or a bet on future growth (Low PEG)?
+Task: State the phase and explain how the Debt/Equity and ROE metrics in the CSV should be weighted based on this macro backdrop.
 
-Step 3: Top 5 Leading Stocks (Alpha Identification)
-From the Leader Sectors, select the 5 strongest individual stocks from the above 5 leading sectors. Use the following "Leader Card" format for each:
-[TICKER] | [COMPANY NAME]
-- The Logic: (e.g., "ROE of [X]% vs Industry Avg of [Y]%, signaling superior efficiency.")
-- Momentum Score: (Change % relative to the sector average.)
-- The "Moat": A 1-sentence summary of their competitive advantage found in the Business Summary.
-- Valuation Grade: (e.g., "Undervalued: PEG is [X] which is $< 1.0$ despite high Rel Vol.")
+Step 2: Sector Strength & Smart Money Flow
+Analyze the provided list by grouping tickers into their respective Sectors. Identify the top 5 leading sectors where 'Smart Money' is currently flowing.
 
-Step 4: Broader Market Narrative & News Integration
-Synthesize the above data with current financial themes (April 2026). Analyze:
-- Global Context: How do these flows align with current macro events (e.g., Middle East energy volatility, AI hardware concentration, or IPO revival)?
-- Predictive Outlook: Based on the Debt/Equity and Capital Flow seen today, is this a sustainable trend or a "Short Squeeze" trap?
+Quant Filter:
+1. Highest aggregate Avg Vol (30d) compared to Avg Vol (10d) (identifying accelerating interest) and positive Premarket/Postmarket Change across the cluster.
+2. Positive Velocity: The sector must have a top-tier average Change % (outperforming the total list average).
+3. Volume Confirmation: Average Rel Vol must be $> 1.2x$, indicating the move is supported by high-conviction buying rather than thin-trade volatility.
+4. Thematic Catalyst: Analyze the Business Summary of the top 3 performers in these sectors. Identify the specific "Narrative" (e.g., "Breakout in Edge AI hardware" or "Short-covering in late-cycle energy").
+
+Task: Rank the top 5 sectors and explain the narrative driving the flow into each.
+
+Step 3: Tactical Stock Selection (Alpha Identification)
+Within the 5 leading sectors identified in Step 2, select 3 standout stocks per sector (or 3 total high-conviction picks if the list is small) based on the following 'Secret Sauce' filters:
+1. Relative Strength: Prioritize stocks where Close is supported by a significant Volume spike relative to the 30d average.
+2. Momentum Score: (Stock's Change % vs. its Sector Average %).
+3. Volume Energy: (Current Rel Vol multiplier).
+4. The "Breakout" Logic: Why is this stock leading? (e.g., "Trading at high velocity with a PEG of [X], suggesting the market is re-rating its growth potential.")
+5. The Moat: A 1-sentence summary of the competitive edge from the sector / industry you interpret.
+6. Risk Check: (Distance from its Forward PE norms or Debt/Equity concerns).
+7. Valuation Grade: (e.g., "Undervalued: PEG is [X] which is $< 1.0$ despite high Rel Vol.")
+8. Short Squeeze Potential: Flag stocks with a Short Float % > 15% that also show a positive Premarket Gap.
+9. Fundamental Quality: Filter for a PEG Ratio < 1.5 and ROE > 15% to ensure momentum is backed by earnings growth.
+
+Step 4. Final Synthesis: Moat vs. Story
+For your final top selections, categorize them as follows:
+
+The Moat: High Profit Margin, low Debt/Equity, and consistent ROE. These are the long-term institutional anchors.
+
+The Story Stock: High Momentum (Change %), high Short Float, and perhaps a higher PEG Ratio. These are the tactical 'alpha' plays driven by sentiment.
+
+Deliverable: Consolidate this into a briefing for the Investment Committee. Start with the Market Phase, list the Sector rotations, and conclude with the Stock-specific breakdown (Moat vs. Story).
