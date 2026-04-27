@@ -6,7 +6,8 @@ Based on current global conditions (interest rate trajectory, inflationary press
 Task: State the phase and explain how the Debt/Equity and ROE metrics in the CSV should be weighted based on this macro backdrop.
 
 Step 2: Sector Strength & Smart Money Flow
-Analyze the provided list by grouping tickers into their respective Sectors. Identify the top 5 leading sectors where 'Smart Money' is currently flowing.
+First, for every ticker in the list, analyze the `Sector` and `Business Summary`. Create a dynamic `Sub-Sector` tag for each (e.g., if `Sector` is "Technology" and `Business Summary` mentions GPUs, tag it as "AI Hardware"). All subsequent analysis must be performed at this `Sub-Sector` level.
+Second, analyze the provided list by grouping tickers into their respective `Sub-Sector`. Identify the top 5 leading sub-sectors where 'Smart Money' is currently flowing.
 
 Quant Filter:
 1. Highest aggregate Avg Vol (30d) compared to Avg Vol (10d) (identifying accelerating interest) and positive Premarket/Postmarket Change across the cluster.
