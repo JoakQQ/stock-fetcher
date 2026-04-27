@@ -195,7 +195,7 @@ def main():
     data_list = get_ticker_infos(tickers=tickers, cache_manager=cache_manager)
 
     df = pd.DataFrame(data_list)
-    out_dir = Path(f"/content/drive/MyDrive/st/output-{datetime.datetime.now().strftime('%Y%m%d%H%M%S')}")
+    out_dir = Path(f"/output-{datetime.datetime.now().strftime('%Y%m%d%H%M%S')}")
     out_dir.mkdir(exist_ok=True)
     output_csv = out_dir / "output.csv"
     df.to_csv(output_csv, index=False)
