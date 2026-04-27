@@ -3,6 +3,8 @@ from googleapiclient.discovery import build
 from googleapiclient.http import MediaFileUpload, MediaIoBaseDownload
 import io
 import os
+import pandas as pd
+import datetime
 
 # 1. Authenticate using WIF (Application Default Credentials)
 # The 'scopes' define what the script is allowed to do.
@@ -13,7 +15,7 @@ service = build('drive', 'v3', credentials=creds)
 
 # 2. Configuration
 # Replace this with your actual Folder ID from the Drive URL
-FOLDER_ID = os.getenv('DRIVE_ID')
+FOLDER_ID = os.getenv('DRIVE_DIR_ID')
 
 def upload_to_st(filename, content_string):
     """Creates or updates a file in the /st/ folder."""
@@ -31,20 +33,6 @@ def upload_to_st(filename, content_string):
     file = service.files().create(
         body=file_metadata,
         media_body=media,
-        fields='id'
-    ).execute()
-    file_id = file.get('id')
-    
-    permission = {
-        'role': 'owner',
-        'type': 'user',
-        'emailAddress': os.getenv('GMAIL_ADDRESS')
-    }
-    
-    service.permissions().create(
-        fileId=file_id,
-        body=permission,
-        transferOwnership=True,
         fields='id'
     ).execute()
     
@@ -69,17 +57,35 @@ def read_from_st(filename):
     done = False
     while done is False:
         status, done = downloader.next_chunk()
-    
-    return fh.getvalue().decode('utf-8')
+
+    fh.seek(0) 
+    df = pd.read_csv(fh)
+    return df
 
 # --- TEST EXECUTION ---
 if __name__ == "__main__":
-    test_filename = "test_run.txt"
+    test_filename = "cache.csv"
     test_content = "Hello from GitHub Actions via WIF!"
 
-    print(f"Testing upload to folder {FOLDER_ID}...")
-    upload_to_st(test_filename, test_content)
+    # print(f"Testing upload to folder {FOLDER_ID}...")
+    # upload_to_st(test_filename, test_content)
 
     print(f"Testing read from folder {FOLDER_ID}...")
-    content = read_from_st(test_filename)
-    print(f"Retrieved Content: {content}")
+    df = read_from_st(test_filename)
+    print(f"Retrieved Content")
+    
+    print(f"Upload csv to folder {FOLDER_ID}...")
+    output_filename = f"output-{datetime.date.today().isoformat()}.csv"
+    df.to_csv(output_filename, index=False)
+    file_metadata = {
+        'name': output_filename
+    }
+    media = MediaFileUpload(output_filename, resumable=True)
+    updated_file = service.files().update(
+        fileId=os.getenv('OUTPUT_FILE_ID'),
+        body=file_metadata,
+        media_body=media,
+        fields='id, name'
+    ).execute()
+    os.remove(output_filename)
+    print(f'updated to {output_filename}')

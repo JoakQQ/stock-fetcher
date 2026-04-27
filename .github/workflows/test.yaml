@@ -35,5 +35,7 @@ jobs:
       - name: Run script
         env:
           GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
-          DRIVE_ID: ${{ secrets.DRIVE_ID }}
+          DRIVE_DIR_ID: ${{ secrets.DRIVE_DIR_ID }}
+          CACHE_FILE_ID: ${{ secrets.CACHE_FILE_ID }}
+          OUTPUT_FILE_ID: ${{ secrets.OUTPUT_FILE_ID }}
         run: python test-drive.py
