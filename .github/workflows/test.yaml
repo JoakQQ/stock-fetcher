@@ -34,6 +34,7 @@ jobs:
 
       - name: Run script
         env:
+          GITHUB_ACTIONS: "true"
           GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
           DRIVE_DIR_ID: ${{ secrets.DRIVE_DIR_ID }}
           CACHE_FILE_ID: ${{ secrets.CACHE_FILE_ID }}
