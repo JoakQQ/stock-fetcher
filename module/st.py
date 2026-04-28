@@ -46,12 +46,13 @@ TV_COLUMNS = [
 
 def get_tickers(min_cap: int = 2_000_000_000,
                 max_results: int = 5_000,
+                avg_daily_vol: int = 2_000_000,
                 sort_by: str = 'intradaymarketcap',
                 sort_asc: bool = False) -> list[dict]:
     query = yf.EquityQuery('and', [
         yf.EquityQuery('gte', ['intradaymarketcap', min_cap]),
         yf.EquityQuery('eq', ['region', 'us']),
-        yf.EquityQuery('gte', ['avgdailyvol3m', 1_000_000]),
+        yf.EquityQuery('gte', ['avgdailyvol3m', avg_daily_vol]),
     ])
     tickers = []
     offset = 0

@@ -13,7 +13,7 @@ def main():
     cache_manager.load()
 
     print(f"Getting tickers with market cap >= $2B...\n")
-    tickers = get_tickers(min_cap=2_000_000_000, max_results=2_000)
+    tickers = get_tickers(min_cap=2_000_000_000, max_results=2_000, avg_daily_vol=2_000_000)
 
     print(f"Screening {len(tickers)} tickers...\n")
     data_list = get_ticker_infos(cache_manager=cache_manager, tickers=tickers)
