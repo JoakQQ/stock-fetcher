@@ -19,10 +19,6 @@ def main():
     data_list = get_ticker_infos(cache_manager=cache_manager, tickers=tickers)
 
     df = pd.DataFrame(data_list)
-    # out_dir = Path(
-    #     f"/output-{datetime.datetime.now().strftime('%Y%m%d%H%M%S')}")
-    # out_dir.mkdir(exist_ok=True)
-    # output_csv = out_dir / "output.csv"
     output_csv = Path(f"output-{datetime.datetime.now().strftime('%Y%m%d%H%M%S')}.csv")
     write_csv(file_path=output_csv, df=df, fileId=os.getenv("OUTPUT_FILE_ID"))
 
