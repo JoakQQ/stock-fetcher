@@ -1,6 +1,10 @@
 name: Main Workflow
 
 on:
+  schedule:
+    # 01:45 UTC is 09:45 HKT
+    # Monday to Friday (1-5)
+    - cron: '45 1 * * 1-5'
   workflow_dispatch:
 
 permissions:
