@@ -15,6 +15,13 @@ def main():
     print(f"Getting tickers with market cap >= $2B...\n")
     tickers = get_tickers(min_cap=2_000_000_000, max_results=2_000, avg_daily_vol=2_000_000)
 
+    # add index etf tickers
+    index_etf_tickers = [{"yf_ticker": "SOXX", "tv_ticker": "NASDAQ:SOXX"},
+                         {"yf_ticker": "VOO", "tv_ticker": "AMEX:VOO"},
+                         {"yf_ticker": "QQQ", "tv_ticker": "NASDAQ:QQQ"},
+                         {"yf_ticker": "DIA", "tv_ticker": "AMEX:DIA"}]
+    tickers.extend(index_etf_tickers)
+
     print(f"Screening {len(tickers)} tickers...\n")
     data_list = get_ticker_infos(cache_manager=cache_manager, tickers=tickers)
 
