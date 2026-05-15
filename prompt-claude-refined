@@ -7,8 +7,11 @@ Step 1: Macro Context & Market Phase
     * Monetary Regime Shifts: Analyze recent Central Bank communications (Fed Minutes, "Fedspeak"). Determine if the market is pricing in a "Pivot," "Pause," or "Hawkish Tightening."
     * Labor & Growth Proxies: Evaluate high-frequency labor data (Jobless Claims) or sentiment (ISM/PMI). Is the "Growth Story" cooling or overheating?
     * Yield Curve & Credit: Analyze the 10Y-2Y Treasury spread. Identify if the event is a flight to safety or a "Risk-On" credit expansion.
+- Breadth & Participation Validation (Anti-Bias Filter):
+    * Compare the performance of the "Big Event" sector/stock against the Equal-Weighted Index (RSP) or Small-Cap Index (IWM).
+    * Logic: If the dominant event is positive but broader market breadth (IWM/RSP) is negative or flat, categorize the phase as "Late-Cycle/Distribution" due to narrow leadership. If the rally is supported by volume acceleration across multiple cyclical sectors, confirm "Mid-Cycle Momentum."
 - Bridge Logic (Hurdle Rates): Based on the identified phase, explicitly define the weighting logic for Debt/Equity and ROE.
-    * Constraint: If the phase is "Hawkish/Late-Cycle," increase the ROE requirement in Step 3 by 200 basis points and penalize Debt/Equity > 0.5. If "Expansionary," prioritize Revenue Growth % over Debt levels.
+    * Constraint: If the phase is "Hawkish/Late-Cycle" or "Distribution," increase the ROE requirement in Step 3 by 200 basis points and penalize Debt/Equity > 0.5. If "Expansionary" or "Mid-Cycle," prioritize Revenue Growth % and Relative Volume over Debt levels.
 
 Step 2: Sector Strength & Smart Money Flow
 1. Categorization: Generate a dynamic "Sub-Sector" tag for every ticker by cross-referencing Sector and Business Summary.
