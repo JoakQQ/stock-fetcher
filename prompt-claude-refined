@@ -3,15 +3,15 @@ Objective: Audit the provided CSV data using a Macro → Sector → Stock system
 Output: Generate a responsive static HTML report strictly following the provided template report HTML.
 
 Step 1: Macro Context & Market Phase
-- Big Event & Narrative Synthesis: Identify the current Market Phase (e.g., Early-Cycle Expansion, Mid-Cycle Momentum, Late-Cycle Defensive, or Distribution) by synthesizing the dominant "Big Event" of the current week. If a primary federal report (CPI/PPI/Retail) is absent, pivot to the active Narrative Driver:
-    * Monetary Regime Shifts: Analyze recent Central Bank communications (Fed Minutes, "Fedspeak"). Determine if the market is pricing in a "Pivot," "Pause," or "Hawkish Tightening."
-    * Labor & Growth Proxies: Evaluate high-frequency labor data (Jobless Claims) or sentiment (ISM/PMI). Is the "Growth Story" cooling or overheating?
-    * Yield Curve & Credit: Analyze the 10Y-2Y Treasury spread. Identify if the event is a flight to safety or a "Risk-On" credit expansion.
-- Breadth & Participation Validation (Anti-Bias Filter):
-    * Compare the performance of the "Big Event" sector/stock against the Equal-Weighted Index (RSP) or Small-Cap Index (IWM).
-    * Logic: If the dominant event is positive but broader market breadth (IWM/RSP) is negative or flat, categorize the phase as "Late-Cycle/Distribution" due to narrow leadership. If the rally is supported by volume acceleration across multiple cyclical sectors, confirm "Mid-Cycle Momentum."
-- Bridge Logic (Hurdle Rates): Based on the identified phase, explicitly define the weighting logic for Debt/Equity and ROE.
-    * Constraint: If the phase is "Hawkish/Late-Cycle" or "Distribution," increase the ROE requirement in Step 3 by 200 basis points and penalize Debt/Equity > 0.5. If "Expansionary" or "Mid-Cycle," prioritize Revenue Growth % and Relative Volume over Debt levels.
+- Narrative Synthesis: Identify the current Market Phase (e.g., Early-Cycle Expansion, Mid-Cycle Momentum, Late-Cycle Defensive, or Distribution) by auditing these three core Macro Drivers:
+    * Monetary Regime (The Fed): Analyze Central Bank tone (Pivot/Pause/Tighten). Identify if the market is fighting the Fed or pricing in "Higher for Longer."
+    * Inflation & Consumption (The "Lock"): Synthesize CPI/PPI (Price Pressure) against Retail Sales (Consumer Health). Determine if the regime is Reflationary (Growth + Low Inflation) or Stagflationary (High Inflation + Low Retail).
+    * Growth & Credit: Audit ISM/PMI, Jobless Claims, and the 10Y-2Y Spread. Determine if the bond market signal is "Credit Expansion" (Risk-On) or a "Flight to Safety" (De-risking).
+- Breadth Filter: Compare "Big Event" sector vs. Equal-Weighted (RSP) or Small-Caps (IWM). If Event [+] but Breadth [–], categorize as Late-Cycle/Distribution (Narrow Leadership). If both [+], confirm Mid-Cycle Momentum.
+- Dynamic Bridge Logic (Hurdles):
+    * Late-Cycle/Hawkish: Set ROE > [Current 10Y Yield + 8%]; penalize D/E > 0.5. Prioritize Cash-Flow/Stability.
+    * Expansion/Mid-Cycle: Set ROE > [Current 10Y Yield + 5%]; prioritize Revenue Growth & VolAccel; require Interest Coverage > 3x.
+    * All-Weather Rule: Ensure Earnings Yield (E/P) > [Current 10Y Yield + 1.5%] to justify equity risk.
 
 Step 2: Sector Strength & Smart Money Flow
 1. Categorization: Generate a dynamic "Sub-Sector" tag for every ticker by cross-referencing Sector and Business Summary.
@@ -24,19 +24,19 @@ Step 2: Sector Strength & Smart Money Flow
 Step 3: Tactical Stock Selection (Alpha Identification)
 Within the 5 leading sub-sectors, select 3 standout stocks per sector (or 3 total if the list is small) based on these strict filters:
 1. Relative Strength: Prioritize stocks where Close price is supported by a significant Volume spike relative to the 30d average at a technical breakout level.
-2. Momentum Score: (Stock's Change % vs. its Sector Average %).
+2. Momentum Score: Stock's Change % vs. its Sector Average %.
 3. Volume Energy: (Current Rel Vol multiplier).
-4. The "Breakout" Logic: Explain the re-rating potential (e.g., "Trading at high velocity with a PEG of [X]").
+4. Breakout Logic: Explain the re-rating potential (e.g., "Trading at high velocity with a PEG of [X]").
 5. The Moat: Classify the competitive edge into one of five categories: Cost Leadership, High Switching Costs, Network Effect, Intangible Assets (Patents/Brand), or Efficient Scale.
 6. Risk Check: Assess distance from Forward PE norms (compared to 5-year mean) or Debt/Equity concerns defined in Step 1.
 7. Valuation Grade: Assign grade (e.g., "Undervalued: PEG < 1.0 despite high Rel Vol.")
 8. Short Squeeze Potential: Flag stocks with Short Float % > 15% AND a positive Premarket Gap.
-9. Fundamental Quality: Filter for PEG Ratio < 1.5 and ROE > [Hurdle Rate from Step 1].
+9. Fundamental Quality: Filter for PEG < 1.5 and ROE > [Step 1 Hurdle].
 
 Step 4: Final Synthesis
-Categorize final selections into two tiers:
-- The Moat: High Profit Margin, low Debt/Equity, consistent ROE (The institutional anchors).
-- The Story Stock: High Change %, high Short Float, higher PEG (The tactical alpha).
+Categorize selections into:
+- The Moat: High Margin, low D/E, consistent ROE (Institutional Anchors).
+- The Story Stock: High Change %, high Short Float, higher PEG (Tactical Alpha).
 
 Deliverable: Investment Committee Briefing
 Structure: Market Phase → Sector Rotations → Stock Breakdown (Moat vs. Story).
