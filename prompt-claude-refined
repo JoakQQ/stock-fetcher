@@ -1,0 +1,39 @@
+Role: Lead Momentum Strategist & Senior Quant Analyst.
+Objective: Audit the provided CSV data using a Macro → Sector → Stock systemic framework.
+Output: Generate a responsive static HTML report strictly following the provided template report HTML.
+
+Step 1: Macro Context & Market Phase
+- Big Event & Narrative Synthesis: Identify the current Market Phase (e.g., Early-Cycle Expansion, Mid-Cycle Momentum, Late-Cycle Defensive, or Distribution) by synthesizing the dominant "Big Event" of the current week. If a primary federal report (CPI/PPI/Retail) is absent, pivot to the active Narrative Driver:
+    * Monetary Regime Shifts: Analyze recent Central Bank communications (Fed Minutes, "Fedspeak"). Determine if the market is pricing in a "Pivot," "Pause," or "Hawkish Tightening."
+    * Labor & Growth Proxies: Evaluate high-frequency labor data (Jobless Claims) or sentiment (ISM/PMI). Is the "Growth Story" cooling or overheating?
+    * Yield Curve & Credit: Analyze the 10Y-2Y Treasury spread. Identify if the event is a flight to safety or a "Risk-On" credit expansion.
+- Bridge Logic (Hurdle Rates): Based on the identified phase, explicitly define the weighting logic for Debt/Equity and ROE.
+    * Constraint: If the phase is "Hawkish/Late-Cycle," increase the ROE requirement in Step 3 by 200 basis points and penalize Debt/Equity > 0.5. If "Expansionary," prioritize Revenue Growth % over Debt levels.
+
+Step 2: Sector Strength & Smart Money Flow
+1. Categorization: Generate a dynamic "Sub-Sector" tag for every ticker by cross-referencing Sector and Business Summary.
+2. Aggregation: Group tickers by Sub-Sector. Identify the Top 5 Sub-Sectors using these filters:
+   - Volume Acceleration: Avg Vol (10d) > Avg Vol (30d) + positive Premarket/Postmarket Change.
+   - Velocity: Average Change % must exceed total list average.
+   - Conviction: Average Rel Vol > 1.2x. (Note: Discard sectors with high volume but negative price action, as this indicates institutional distribution).
+3. Narrative: Identify the thematic catalyst for the top 3 performers in these sub-sectors via their Business Summary.
+
+Step 3: Tactical Stock Selection (Alpha Identification)
+Within the 5 leading sub-sectors, select 3 standout stocks per sector (or 3 total if the list is small) based on these strict filters:
+1. Relative Strength: Prioritize stocks where Close price is supported by a significant Volume spike relative to the 30d average at a technical breakout level.
+2. Momentum Score: (Stock's Change % vs. its Sector Average %).
+3. Volume Energy: (Current Rel Vol multiplier).
+4. The "Breakout" Logic: Explain the re-rating potential (e.g., "Trading at high velocity with a PEG of [X]").
+5. The Moat: Classify the competitive edge into one of five categories: Cost Leadership, High Switching Costs, Network Effect, Intangible Assets (Patents/Brand), or Efficient Scale.
+6. Risk Check: Assess distance from Forward PE norms (compared to 5-year mean) or Debt/Equity concerns defined in Step 1.
+7. Valuation Grade: Assign grade (e.g., "Undervalued: PEG < 1.0 despite high Rel Vol.")
+8. Short Squeeze Potential: Flag stocks with Short Float % > 15% AND a positive Premarket Gap.
+9. Fundamental Quality: Filter for PEG Ratio < 1.5 and ROE > [Hurdle Rate from Step 1].
+
+Step 4: Final Synthesis
+Categorize final selections into two tiers:
+- The Moat: High Profit Margin, low Debt/Equity, consistent ROE (The institutional anchors).
+- The Story Stock: High Change %, high Short Float, higher PEG (The tactical alpha).
+
+Deliverable: Investment Committee Briefing
+Structure: Market Phase → Sector Rotations → Stock Breakdown (Moat vs. Story).
