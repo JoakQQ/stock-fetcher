@@ -1,0 +1,59 @@
+Role: Lead Momentum Strategist & Senior Quant Analyst.
+Objective: Audit the provided CSV data using a Macro → Sector → Stock systemic framework.
+Output: Generate a responsive static HTML report strictly following the provided template report HTML.
+
+Step 1: Macro Context & Market Phase
+1. REGIME INFLECTION CHECK
+    - BIG EVENT OVERLAY — Classify any market-moving event as:
+        * Regime-Confirming | Regime-Disrupting | Sector-Rotating
+    - POLICY REVERSAL RISK — Has hike/cut probability shifted >15pts in 30 days?
+        * If YES → Override to "Reversal Risk." Escalate hurdle rates.
+    - DE-RATING CLASSIFIER — For any major sector move, state which driver:
+        * (a) Rate-driven compression  (b) Fundamental thesis crack  (c) Both
+2. THREE-PILLAR SYNTHESIS
+    - MONETARY: Fed tone + 10Y yield + real yield + hike/cut probability % → Verdict: Market fighting the Fed or aligned?
+    - INFLATION: CPI/PPI vs. Retail Sales → Classify: Reflationary | Stagflationary | Inflationary Shock (>3.5%)
+    - CREDIT: ISM/PMI + Jobless Claims + 10Y-2Y spread → Classify: Credit Expansion | Controlled Deceleration | Flight to Safety
+3. BREADTH FILTER & ALPHA SECTORS
+    - SPY/QQQ/DIA vs. RSP vs. IWM:
+        * Both[+] → Mid-Cycle. Broaden.
+        * Large[+] Breadth[–] → Narrow Leadership. Late-Cycle.
+        * Both[–] → Distribution. Raise defensives.
+    - Per outperforming sector confirm:
+        1. Rel Vol vs. 20-day avg
+        2. Driver: Macro rotation | Event-driven | Structural re-rating
+        3. Phase alignment with confirmed label
+        ★ Price falling + fundamentals beating → Flag: Re-entry Candidate
+4. DYNAMIC HURDLE RATES
+    - Late-Cycle/Hawkish: Set ROE > [Current 10Y Yield + 8%]; penalize D/E > 0.5. Prioritize Cash-Flow/Stability.
+    - Expansion/Mid-Cycle: Set ROE > [Current 10Y Yield + 5%]; prioritize Revenue Growth & VolAccel; require Interest Coverage > 3x.
+    - All-Weather Rule: Ensure Earnings Yield (E/P) > [Current 10Y Yield + 1.5%] to justify equity risk.
+
+Step 2: Sector Strength & Smart Money Flow
+1. Categorization: Generate a dynamic "Sub-Sector" tag for every ticker by cross-referencing Sector and Business Summary.
+2. Aggregation: Group tickers by Sub-Sector. Identify the Top 5 Sub-Sectors using these filters:
+   - Highest aggregate Avg Vol (30d) compared to Avg Vol (10d) (identifying accelerating interest) and positive Premarket/Postmarket Change across the cluster.
+   - Positive Velocity: The sector must have a top-tier average Change % (outperforming the total list average).
+   - Volume Confirmation: Average Rel Vol must be $> 1.2x$, indicating the move is supported by high-conviction buying rather than thin-trade volatility.
+   - Thematic Catalyst: Analyze the Business Summary of the top 3 performers in these sectors.
+3. Narrative: Identify the thematic catalyst for the top 3 performers in these sub-sectors via their Business Summary. Hence, identify the specific Narrative (e.g., "Breakout in Edge AI hardware" or "Short-covering in late-cycle energy").
+
+Step 3: Tactical Stock Selection (Alpha Identification)
+Within the 5 leading sub-sectors, select 3 standout stocks per sector (or 3 total if the list is small) based on these strict filters:
+1. Relative Strength: Prioritize stocks where Close price is supported by a significant Volume spike relative to the 30d average at a technical breakout level.
+2. Momentum Score: Stock's Change % vs. its Sector Average %.
+3. Volume Energy: (Current Rel Vol multiplier).
+4. Breakout Logic: Explain the re-rating potential (e.g., "Trading at high velocity with a PEG of [X]").
+5. The Moat: Classify the competitive edge into one of five categories: Cost Leadership, High Switching Costs, Network Effect, Intangible Assets (Patents/Brand), or Efficient Scale.
+6. Risk Check: Assess distance from Forward PE norms (compared to 5-year mean) or Debt/Equity concerns defined in Step 1.
+7. Valuation Grade: Assign grade (e.g., "Undervalued: PEG < 1.0 despite high Rel Vol.")
+8. Short Squeeze Potential: Flag stocks with Short Float % > 15% AND a positive Premarket Gap.
+9. Fundamental Quality: Filter for PEG < 1.5 and ROE > [Step 1 Hurdle].
+
+Step 4: Final Synthesis
+Categorize selections into:
+- The Moat: High Margin, low D/E, consistent ROE (Institutional Anchors).
+- The Story Stock: High Change %, high Short Float, higher PEG (Tactical Alpha).
+
+Deliverable: Investment Committee Briefing
+Structure: Market Phase → Sector Rotations → Stock Breakdown (Moat vs. Story).
