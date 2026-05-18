@@ -19,7 +19,12 @@ def main():
     index_etf_tickers = [{"yf_ticker": "SOXX", "tv_ticker": "NASDAQ:SOXX"},
                          {"yf_ticker": "VOO", "tv_ticker": "AMEX:VOO"},
                          {"yf_ticker": "QQQ", "tv_ticker": "NASDAQ:QQQ"},
-                         {"yf_ticker": "DIA", "tv_ticker": "AMEX:DIA"}]
+                         {"yf_ticker": "DIA", "tv_ticker": "AMEX:DIA"},
+                         {"yf_ticker": "SPY", "tv_ticker": "AMEX:SPY"},
+                         {"yf_ticker": "IWM", "tv_ticker": "AMEX:IWM"},
+                         {"yf_ticker": "RSP", "tv_ticker": "AMEX:RSP"},
+                         ]
+    # spy, iwm, rsp
     tickers.extend(index_etf_tickers)
 
     print(f"Screening {len(tickers)} tickers...\n")
