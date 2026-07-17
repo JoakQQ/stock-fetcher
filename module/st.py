@@ -5,6 +5,9 @@ from tqdm import tqdm
 import random
 import requests
 import json
+from datetime import datetime
+import holidays
+from zoneinfo import ZoneInfo
 
 
 YF_PAGE_SIZE = 250
@@ -41,6 +44,15 @@ TV_COLUMNS = [
     "short_percentage_of_float",
     "average_volume_10d_calc",
     "average_volume_30d_calc",
+    "volume",
+]
+CLOSE_TV_COLUMNS = [
+    "name",
+    "change",
+    "premarket_gap",
+    "close",
+    "high",
+    "low",
     "volume",
 ]
 
@@ -138,3 +150,53 @@ def get_ticker_infos(cache_manager: CacheManager, tickers: list[dict], batch_siz
             results.append(row)
         time.sleep(0.25)
     return results
+
+def get_close_infos(tickers: list[dict], batch_size: int = 500) -> list:
+    results = []
+    for i in tqdm(range(0, len(tickers), batch_size), desc="Fetching batches", unit="batch"):
+        batch = tickers[i:i + batch_size]
+        tv_payload = {
+            "symbols": {
+                "tickers": [t["tv_ticker"] for t in batch],
+                "query": {"types": []}
+            },
+            "columns": CLOSE_TV_COLUMNS
+        }
+        tv_headers = {
+            "Content-Type": "application/json",
+            "User-Agent": random.choice(TV_USER_AGENTS)
+        }
+        try:
+            tv_response = requests.post(
+                TV_SCANNER_URL, headers=tv_headers, data=json.dumps(tv_payload))
+            tv_response.raise_for_status()
+            tv_data = tv_response.json()
+        except Exception as e:
+            print(
+                f"TV scanner request failed for batch {i // batch_size + 1}: {e}")
+            continue
+        for _item in tqdm(tv_data.get('data', []), desc=f" > Fetching batch {i // batch_size + 1}", unit="ticker", leave=False):
+            item = _item['d']
+
+            row = {
+                "ticker": item[CLOSE_TV_COLUMNS.index("name")],
+                "change": item[CLOSE_TV_COLUMNS.index("change")],
+                "premarket_gap": item[CLOSE_TV_COLUMNS.index("premarket_gap")],
+                "close": item[CLOSE_TV_COLUMNS.index("close")],
+                "high": item[CLOSE_TV_COLUMNS.index("high")],
+                "low": item[CLOSE_TV_COLUMNS.index("low")],
+                "volume": item[CLOSE_TV_COLUMNS.index("volume")],
+            }
+            results.append(row)
+        time.sleep(0.25)
+    return results
+
+def is_trading_day() -> bool:
+    now = datetime.now()
+    now = now.astimezone(ZoneInfo("America/New_York"))
+    if now.weekday() >= 5:
+        return False
+    nyse_holidays = holidays.financial_holidays("NYSE", years=now.year)
+    if now.date() in nyse_holidays:
+        return False
+    return True
